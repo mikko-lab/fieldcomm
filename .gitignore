@@ -1,0 +1,9 @@
+node_modules/
+*.priv.json
+*.pub.json
+vault.json
+share-*.json
+reconstructed.hex
+packet.json
+duress-alert-*.txt
+.DS_Store

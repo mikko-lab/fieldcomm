@@ -1,0 +1,31 @@
+{
+  "name": "fieldcomm",
+  "version": "0.1.0",
+  "description": "Post-quantum field command protocol PoC — 50-byte encrypted military-grade messaging",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "demo": "node src/index.js",
+    "test": "node src/test.js",
+    "keygen": "node src/cli/fieldcomm.js keygen",
+    "send": "node src/cli/fieldcomm.js send",
+    "receive": "node src/cli/fieldcomm.js receive"
+  },
+  "keywords": [
+    "post-quantum",
+    "kyber",
+    "ml-kem",
+    "encryption",
+    "defense"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@noble/ciphers": "^2.2.0",
+    "@noble/post-quantum": "^0.6.1",
+    "commander": "^14.0.3",
+    "shamir": "^0.7.1"
+  },
+  "bin": {
+    "fieldcomm": "./src/cli/fieldcomm.js"
+  }
+}

@@ -14,7 +14,7 @@
  */
 
 import { split, join } from 'shamir';
-import { randomBytes } from 'node:crypto';
+import { randomBytes, timingSafeEqual } from 'node:crypto';
 
 /**
  * Jaa avain n osaan, joista tarvitaan k rekonstruointiin
@@ -59,7 +59,7 @@ export function reconstructSecret(shares, k = 3) {
  */
 export function verifyReconstruction(original, reconstructed) {
   if (original.length !== reconstructed.length) return false;
-  return original.every((b, i) => b === reconstructed[i]);
+  return timingSafeEqual(Buffer.from(original), Buffer.from(reconstructed));
 }
 
 /**

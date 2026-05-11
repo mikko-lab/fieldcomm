@@ -122,23 +122,24 @@ export function openVault(vault, pin, context = {}) {
   const normalSalt = Buffer.from(vault.normalSalt, 'hex');
   const duressSalt = Buffer.from(vault.duressSalt, 'hex');
 
-  const attemptKey = deriveKey(pin, normalSalt);
+  // Johdetaan MOLEMMAT avaimet aina — ei ajoituseroa normaali vs. duress-PINin välillä
+  const normalKey = deriveKey(pin, normalSalt);
+  const duressKey = deriveKey(pin, duressSalt);
 
-  // Kokeile normaalia avainta ensin
   let secret = null;
   let isDuress = false;
 
+  // Kokeile normaalia avainta
   try {
-    secret = unseal(Buffer.from(vault.realBlob, 'hex'), attemptKey);
-    // Onnistui — normaali pääsy
+    secret = unseal(Buffer.from(vault.realBlob, 'hex'), normalKey);
     return { secret, isDuress: false, alertSent: false };
   } catch {
-    // Normaali avain ei toiminut — kokeile duress-avainta
+    // Ei normaali PIN — kokeile duress-avainta
   }
 
-  const duressAttemptKey = deriveKey(pin, duressSalt);
+  // Kokeile duress-avainta
   try {
-    secret = unseal(Buffer.from(vault.decoyBlob, 'hex'), duressAttemptKey);
+    secret = unseal(Buffer.from(vault.decoyBlob, 'hex'), duressKey);
     isDuress = true;
   } catch {
     throw new Error('VIRHEELLINEN PIN — pääsy estetty');

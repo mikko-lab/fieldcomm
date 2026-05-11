@@ -6,7 +6,7 @@
   "main": "src/index.js",
   "scripts": {
     "demo": "node src/index.js",
-    "test": "node src/test.js",
+    "test": "node src/index.js && node src/demo/shamir-demo.js && node src/demo/duress-demo.js",
     "keygen": "node src/cli/fieldcomm.js keygen",
     "send": "node src/cli/fieldcomm.js send",
     "receive": "node src/cli/fieldcomm.js receive"

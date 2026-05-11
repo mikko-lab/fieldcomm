@@ -278,7 +278,7 @@ vaultCmd
     console.log('\n  FieldComm — Vault: alustus');
     console.log('  ─────────────────────────────────');
 
-    const vault = initVault(opts.normalPin, opts.duressPinn, Buffer.from(opts.real), Buffer.from(opts.decoy));
+    const vault = initVault(opts.normalPin, opts.duressPin, Buffer.from(opts.real), Buffer.from(opts.decoy));
     saveJSON(opts.out, vault);
 
     console.log('\n  ✓ Dual-vault luotu:');

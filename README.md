@@ -172,7 +172,7 @@ src/
 
 ## Kehityspolku: PoC:sta tuotantoon
 
-FieldComm on tällä hetkellä proof of concept. Siirtyminen tuotantotason suvereeniin järjestelmään vaatii kurinaläisen, monivaiheisen lähestymistavan.
+FieldComm on tällä hetkellä proof of concept. Siirtyminen tuotantotason suvereeniin järjestelmään vaatii kurinalaisen, monivaiheisen lähestymistavan.
 
 ### Vaihe 1 — Perusta (3–6 kuukautta)
 

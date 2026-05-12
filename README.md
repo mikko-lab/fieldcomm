@@ -162,6 +162,11 @@ src/
 - ML-DSA-allekirjoitus (3325t) ei mahdu 50t LoRa-kehykseen — kulkee Iris²:n kautta erillisenä
 - Shamirin jako ei havaitse sabotoitua osaa — väärä avain paljastuu ML-DSA-vahvistuksessa
 - Ei HSM-integraatiota — yksityisavaimet JSON-tiedostoissa
+- **Sekvenssimero nollautuu käynnistyksessä — replay-suoja ei ole aukoton**
+
+  `sequenceCounter` on prosessimuuttuja. Jokainen käynnistys aloittaa sarjan `#0, #1, #2 ...` uudelleen. Hyökkääjä voi kaapata viestin `#2` ensimmäisestä käynnistyksestä, odottaa uudelleenkäynnistystä ja lähettää sen uudelleen — se läpäisee sekvenssitarkistuksen. Aikaleiman 60 sekunnin ikkuna rajoittaa hyökkäysmahdollisuutta mutta ei poista sitä.
+
+  Tuotantoratkaisu: monotonisesti kasvava sekvenssimero pysyvässä tallennuksessa (SQLite, KV-store). Vastaanottaja hylkää kaiken mikä on ≤ viimeksi nähtyyn sekvenssiin.
 
 ---
 

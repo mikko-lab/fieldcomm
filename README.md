@@ -170,36 +170,36 @@ src/
 
 ---
 
-## Future Roadmap: From PoC to Production
+## Kehityspolku: PoC:sta tuotantoon
 
-FieldComm is currently a Proof of Concept. Transitioning to a production-grade sovereign system requires a disciplined, multi-phase approach.
+FieldComm on tällä hetkellä proof of concept. Siirtyminen tuotantotason suvereeniin järjestelmään vaatii kurinaläisen, monivaiheisen lähestymistavan.
 
-### Phase 1 — Foundations (3–6 months)
+### Vaihe 1 — Perusta (3–6 kuukautta)
 
-- **HSM Integration:** Moving private keys from JSON files to hardware security modules (e.g., TPM 2.0, YubiKey, or dedicated HSMs).
-- **Persistent State Management:** Implementing reliable sequence counters (SQLite/KV-store) to prevent replay attacks across restarts.
-- **Key Derivation (HKDF):** Proper key blinding and binding to session contexts.
-- **Third-party Audit:** Independent cryptographic review of the implementation.
+- **HSM-integraatio:** Yksityisavainten siirtäminen JSON-tiedostoista laitteistotason turvayksikköihin (TPM 2.0, YubiKey tai dedikoidut HSM:t).
+- **Pysyvä tilanhallininta:** Luotettava sekvenssimero pysyvässä tallennuksessa (SQLite/KV-store) replay-hyökkäysten estämiseksi uudelleenkäynnistysten yli.
+- **Avainten johdanta (HKDF):** Asianmukainen avainten sidonta istuntokontekstiin.
+- **Ulkopuolinen auditointi:** Riippumaton kryptografinen katselmus toteutuksesta.
 
-### Phase 2 — Integration & Hardware (6–12 months)
+### Vaihe 2 — Integraatiot ja laitteisto (6–12 kuukautta)
 
-- **Iris² Connectivity:** Testing within ESA sandbox environments for future EU satellite constellation compatibility.
-- **Physical Radio Prototypes:** Transitioning from simulators to real LoRa/satellite hardware.
-- **Decentralized Identity (DID):** Robust identity management for field units.
-- **NATO Gateway:** Investigating CRONOS compatibility for interoperability.
+- **Iris²-yhteys:** Testaus ESA:n sandbox-ympäristöissä EU:n satelliittikonstellaatioon sopeutumiseksi.
+- **Fyysinen radioprototypointi:** Siirtyminen simulaattoreista oikeaan LoRa/satelliittilaitteistoon.
+- **Hajautettu identiteetti (DID):** Kenttäyksiköiden identiteettien kestävä hallinta.
+- **NATO-yhdyskäytävä:** CRONOS-yhteensopivuuden selvittäminen.
 
-### Phase 3 — Certification (12–24 months)
+### Vaihe 3 — Sertifiointi (12–24 kuukautta)
 
-- **NCSC-FI Approval:** National security certification for governmental use.
-- **Common Criteria:** Achieving EU-level security certification.
-- **Operational Field Testing:** Stress-testing in adverse conditions (jamming, extreme weather).
+- **NCSC-FI-hyväksyntä:** Kansallinen tietoturvasertifiointi viranomaiskäyttöön.
+- **Common Criteria:** EU-tason tietoturvasertifiointi.
+- **Operatiivinen kenttätestaus:** Rasitustestaus häirintä- ja ääriolo­suhteissa.
 
-### Project Realities
+### Projektin realiteetit
 
-- **Estimated Cost:** 2–5M€ to production-ready status.
-- **Timeline:** 3–5 years for full certification and deployment.
-- **Team Composition:** Cryptographers, Systems Engineers, and Regulatory Compliance specialists.
-- **The Main Hurdle:** Organizational and political alignment, rather than pure technical implementation.
+- **Arvioitu kustannus:** 2–5 M€ tuotantovalmiiseen tilaan.
+- **Aikajänne:** 3–5 vuotta täyteen sertifiointiin ja käyttöönottoon.
+- **Tiimikoostumus:** Kryptografit, järjestelmäinsinöörit ja regulaatioasiantuntijat.
+- **Suurin haaste:** Organisatorinen ja poliittinen yhdensuuntaistaminen — ei tekninen toteutus.
 
 ---
 

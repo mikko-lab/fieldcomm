@@ -165,6 +165,39 @@ src/
 
 ---
 
+## Future Roadmap: From PoC to Production
+
+FieldComm is currently a Proof of Concept. Transitioning to a production-grade sovereign system requires a disciplined, multi-phase approach.
+
+### Phase 1 — Foundations (3–6 months)
+
+- **HSM Integration:** Moving private keys from JSON files to hardware security modules (e.g., TPM 2.0, YubiKey, or dedicated HSMs).
+- **Persistent State Management:** Implementing reliable sequence counters (SQLite/KV-store) to prevent replay attacks across restarts.
+- **Key Derivation (HKDF):** Proper key blinding and binding to session contexts.
+- **Third-party Audit:** Independent cryptographic review of the implementation.
+
+### Phase 2 — Integration & Hardware (6–12 months)
+
+- **Iris² Connectivity:** Testing within ESA sandbox environments for future EU satellite constellation compatibility.
+- **Physical Radio Prototypes:** Transitioning from simulators to real LoRa/satellite hardware.
+- **Decentralized Identity (DID):** Robust identity management for field units.
+- **NATO Gateway:** Investigating CRONOS compatibility for interoperability.
+
+### Phase 3 — Certification (12–24 months)
+
+- **NCSC-FI Approval:** National security certification for governmental use.
+- **Common Criteria:** Achieving EU-level security certification.
+- **Operational Field Testing:** Stress-testing in adverse conditions (jamming, extreme weather).
+
+### Project Realities
+
+- **Estimated Cost:** 2–5M€ to production-ready status.
+- **Timeline:** 3–5 years for full certification and deployment.
+- **Team Composition:** Cryptographers, Systems Engineers, and Regulatory Compliance specialists.
+- **The Main Hurdle:** Organizational and political alignment, rather than pure technical implementation.
+
+---
+
 ## Viitteet
 
 - [NIST FIPS 203 — ML-KEM](https://csrc.nist.gov/pubs/fips/203/final)
